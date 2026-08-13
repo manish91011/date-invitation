@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Go On A Date With Me? 💕</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="hearts" aria-hidden="true"></div>
+
+  <main class="app">
+
+    <!-- ==================== SCREEN 1 ==================== -->
+    <section class="card" id="questionScreen">
+
+      <div class="emoji">🥹</div>
+
+      <p class="eyebrow">I have a little question...</p>
+
+      <h1>Will you go on a date with me?</h1>
+
+      <p class="subtext">
+        Please choose carefully 😌
+      </p>
+
+      <div class="button-area" id="buttonArea">
+
+        <button class="btn yes" id="yesButton">
+          YES ❤️
+        </button>
+
+        <button class="btn no" id="noButton">
+          NO 😭
+        </button>
+
+      </div>
+
+      <p class="hint" id="hint">
+        Try clicking NO... if you can 👀
+      </p>
+
+    </section>
+
+
+    <!-- ==================== SCREEN 2 ==================== -->
+    <section class="card hidden" id="yesScreen">
+
+      <div class="emoji">🥰</div>
+
+      <p class="eyebrow">
+        I KNEW IT!
+      </p>
+
+      <h1>
+        YAY! It's a date! 💕
+      </h1>
+
+      <p class="subtext">
+        Now let's plan our perfect date.
+      </p>
+
+
+      <!-- FOOD -->
+
+      <div class="choices">
+
+        <p class="choice-title">
+          What should we eat? 🍴
+        </p>
+
+        <div class="choice-grid" id="foodChoices">
+
+          <button class="choice" data-value="Pizza 🍕">
+            Pizza 🍕
+          </button>
+
+          <button class="choice" data-value="Momos 🥟">
+            Momos 🥟
+          </button>
+
+          <button class="choice" data-value="Burger 🍔">
+            Burger 🍔
+          </button>
+
+          <button class="choice" data-value="Something fancy ✨">
+            Something fancy ✨
+          </button>
+
+        </div>
+
+
+        <!-- VIBE -->
+
+        <p class="choice-title">
+          Pick a vibe 💫
+        </p>
+
+        <div class="choice-grid" id="vibeChoices">
+
+          <button class="choice" data-value="Movie 🎬">
+            Movie 🎬
+          </button>
+
+          <button class="choice" data-value="Coffee ☕">
+            Coffee ☕
+          </button>
+
+          <button class="choice" data-value="Walk 🌆">
+            Walk 🌆
+          </button>
+
+          <button class="choice" data-value="Surprise me 🎁">
+            Surprise me 🎁
+          </button>
+
+        </div>
+
+
+        <button
+          class="continue"
+          id="continueButton"
+          disabled
+        >
+          Continue 💗
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================== SCREEN 3 ==================== -->
+
+    <section class="card hidden" id="placeScreen">
+
+      <div class="emoji">
+        📍
+      </div>
+
+      <p class="eyebrow">
+        WHERE ARE WE GOING?
+      </p>
+
+      <h1>
+        Pick our date spot 💕
+      </h1>
+
+      <p class="subtext">
+        You choose the place.
+      </p>
+
+
+      <div class="choices">
+
+        <div class="choice-grid" id="placeChoices">
+
+          <button class="choice" data-value="Your favorite cafe ☕">
+            Labim Mall
+          </button>
+
+          <button class="choice" data-value="A nice restaurant 🍽️">
+            Eyeplex Mall 
+          </button>
+
+          <button class="choice" data-value="Movie theater 🎬">
+            Civil Mall 
+          </button>
+
+          <button class="choice" data-value="A park 🌳">
+            Durbar Mall
+          </button>
+
+          <button class="choice" data-value="Rooftop 🌃">
+            Rooftop 🌃
+          </button>
+
+          <button class="choice" data-value="You decide 😌">
+            You decide 😌
+          </button>
+
+        </div>
+
+
+        <button
+          class="continue"
+          id="placeContinue"
+          disabled
+        >
+          Choose Date 📅
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================== SCREEN 4 ==================== -->
+
+    <section class="card hidden" id="dateScreen">
+
+      <div class="emoji">
+        📅
+      </div>
+
+      <p class="eyebrow">
+        WHEN ARE YOU FREE?
+      </p>
+
+      <h1>
+        Pick our date 💕
+      </h1>
+
+      <p class="subtext">
+        Choose a day that works for you.
+      </p>
+
+
+      <div class="date-container">
+
+        <label for="datePicker">
+          Pick a date
+        </label>
+
+        <input
+          type="date"
+          id="datePicker"
+        >
+
+      </div>
+
+
+      <div class="time-container">
+
+        <label for="timePicker">
+          Pick a time
+        </label>
+
+        <input
+          type="time"
+          id="timePicker"
+        >
+
+      </div>
+
+
+      <button
+        class="continue"
+        id="dateContinue"
+        disabled
+      >
+        Confirm Date 💖
+      </button>
+
+    </section>
+
+
+
+    <!-- ==================== SCREEN 5 ==================== -->
+
+    <section class="card hidden" id="finalScreen">
+
+      <div class="emoji">
+        💖
+      </div>
+
+      <p class="eyebrow">
+        DATE CONFIRMED
+      </p>
+
+      <h1>
+        It's officially a date!
+      </h1>
+
+      <p
+        class="subtext"
+        id="finalText"
+      >
+      </p>
+
+
+      <div class="summary">
+
+        <div class="summary-item">
+          <span>🍴 Food</span>
+          <strong id="finalFood"></strong>
+        </div>
+
+        <div class="summary-item">
+          <span>✨ Vibe</span>
+          <strong id="finalVibe"></strong>
+        </div>
+
+        <div class="summary-item">
+          <span>📍 Place</span>
+          <strong id="finalPlace"></strong>
+        </div>
+
+        <div class="summary-item">
+          <span>📅 Date</span>
+          <strong id="finalDate"></strong>
+        </div>
+
+        <div class="summary-item">
+          <span>⏰ Time</span>
+          <strong id="finalTime"></strong>
+        </div>
+
+      </div>
+
+
+      <div class="final-note">
+        Now you can't say you didn't agree 😌💕
+      </div>
+
+
+      <button
+        class="restart"
+        id="restartButton"
+      >
+        Start Again
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
